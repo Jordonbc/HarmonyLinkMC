@@ -29,12 +29,8 @@ We welcome contributions from the Minecraft and programming community to further
 
 The HarmonyLink Minecraft Mod is released under the [MIT License](LICENSE). Feel free to fork, modify, and distribute the mod according to the terms of the license.
 
-### Acknowledgements
-
-We would like to thank Jordonbc for developing HarmonyLink and providing the API that powers this Minecraft mod. Their innovative work has paved the way for a more immersive handheld gaming experience.
-
 ### Contact
 
-If you have any further questions or inquiries regarding the HarmonyLink Minecraft Mod, please contact us at [support@jordongamedev.co.uk](mailto:support@jordongamedev.co.uk).
+If you have any further questions or inquiries regarding the HarmonyLink Minecraft Mod, please contact me at [support@jordongamedev.co.uk](mailto:support@jordongamedev.co.uk).
 
 Happy gaming and enjoy the optimized Minecraft experience with HarmonyLink!
