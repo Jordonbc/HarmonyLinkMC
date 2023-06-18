@@ -1,8 +1,8 @@
 package net.jordon.harmonylink;
 
 public enum ChargingStatus {
-    BATTERY,
-    CHARGING,
-    UNKNOWN
+    Battery,
+    Charging,
+    Unknown
     // add any other statuses you might receive
 }

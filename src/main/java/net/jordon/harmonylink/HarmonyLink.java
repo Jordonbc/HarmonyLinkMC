@@ -1,8 +1,9 @@
 package net.jordon.harmonylink;
 
+import com.mojang.authlib.minecraft.client.MinecraftClient;
 import com.mojang.logging.LogUtils;
+import net.minecraft.client.GraphicsStatus;
 import net.minecraft.client.Minecraft;
-import net.minecraft.util.GsonHelper;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.TickEvent;
@@ -14,6 +15,8 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.loading.FMLLoader;
 import org.slf4j.Logger;
+
+import net.minecraftforge.client.*;
 
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -57,7 +60,7 @@ public class HarmonyLink
     {
         if (event.player.level.isClientSide) // We only want to do this on the client side
         {
-            if (++tickCount >= 20*2) // Increase the tick count and check if we've reached 20 yet
+            if (++tickCount >= 20) // Increase the tick count and check if we've reached 20 yet (1-second timer)
             {
                 tickCount = 0; // Reset the tick count for next time
 
@@ -80,33 +83,31 @@ public class HarmonyLink
                 .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
                 .create();
 
-        SystemInfo systemInfo = gson.fromJson(jsonResponse, SystemInfo.class);
-
-        this.systemInfo = systemInfo;
-
         LOGGER.info("JSON Response: {}", this.systemInfo);
 
-        if (this.systemInfo.battery_info.hasBattery)
+        if (this.systemInfo != gson.fromJson(jsonResponse, SystemInfo.class))
         {
-            if (this.systemInfo.battery_info.chargingStatus == ChargingStatus.BATTERY)
+            SystemInfo newSystemInfo = gson.fromJson(jsonResponse, SystemInfo.class);
+            if (newSystemInfo.battery_info.hasBattery)
             {
-                setRenderDistance(4);
+                if (newSystemInfo.battery_info.chargingStatus == ChargingStatus.Battery)
+                { setRenderDistance(4); Minecraft.getInstance().options.simulationDistance().set(4); Minecraft.getInstance().options.graphicsMode().set(GraphicsStatus.FAST); Minecraft.getInstance().options.biomeBlendRadius().set(0); }
+
+                else if (newSystemInfo.battery_info.chargingStatus == ChargingStatus.Charging)
+                { setRenderDistance(12); Minecraft.getInstance().options.simulationDistance().set(12); Minecraft.getInstance().options.graphicsMode().set(GraphicsStatus.FANCY); Minecraft.getInstance().options.biomeBlendRadius().set(2); }
             }
-            else if (this.systemInfo.battery_info.chargingStatus == ChargingStatus.CHARGING)
-            {
-                setRenderDistance(12);
-            }
+
+            this.systemInfo = newSystemInfo;
         }
     }
 
     private void setRenderDistance(int distance)
     {
         // Check if the game is running on the client side
-        if(FMLLoader.getDist() == Dist.CLIENT)
+        if(Minecraft.getInstance().player != null && Minecraft.getInstance().player.level.isClientSide)
         {
-            //Minecraft.getInstance().;
-            // Get the current Minecraft instance and adjust the render distance
-            //Minecraft.getInstance().options.renderDistance = distance;
+            LOGGER.info("Setting render distance to {}", distance);
+            Minecraft.getInstance().options.renderDistance().set(distance);
         }
         else
         {
