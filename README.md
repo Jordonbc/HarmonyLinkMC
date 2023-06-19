@@ -1,5 +1,6 @@
+![MCVer](https://img.shields.io/badge/MC-1.19.4-green) ![ModLoader](https://img.shields.io/badge/Mod_Loader-Forge-green)
 <p align="center">
-  <img src="Resources/HarmonyLinkBanner.png" alt="Sublime's custom image"/>
+  <img src="Resources/HarmonyLinkBanner.png" alt="HarmonyLinkMC"/>
 </p>
 
 Welcome to the HarmonyLink Minecraft Mod! This mod integrates the HarmonyLink API into Minecraft, providing an enhanced gaming experience on handheld devices, including the Steam Deck. With HarmonyLink, you can access real-time system metrics and adapt your gameplay settings for a more personalized and immersive adventure.
