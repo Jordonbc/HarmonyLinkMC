@@ -18,8 +18,11 @@ To get started with the HarmonyLink Minecraft Mod, follow these steps:
 1. Install Minecraft Forge: Make sure you have Minecraft Forge installed on your device.
 2. Download HarmonyLink Mod: Download the latest version of the HarmonyLink Minecraft Mod from the [GitHub repository](https://github.com/Jordonbc/HarmonyLink-MC/releases).
 3. Install HarmonyLink Mod: Place the downloaded mod file into the "mods" folder in your Minecraft directory.
+4. Download and run [HarmonyLinkServer](https://github.com/Jordonbc/HarmonyLinkServer).
 4. Launch Minecraft: Start Minecraft with the HarmonyLink Mod installed.
 5. Enjoy the Enhanced Experience: Play Minecraft on your handheld device and witness the real-time system metrics and adaptive gameplay features provided by HarmonyLink.
+
+Note: To get this working in gamemode, HarmonyLinkServer needs to be installed as a service to run in the background.
 
 ### Contributing
 
