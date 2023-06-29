@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "harmonylink",
+  "version": "${version}",
+  "name": "HarmonyLink",
+  "description": "This is an example description! Tell everyone what your mod is about!",
+  "authors": [
+    "Me!"
+  ],
+  "contact": {
+    "homepage": "https://fabricmc.net/",
+    "sources": "https://github.com/FabricMC/fabric-example-mod"
+  },
+  "license": "Insert License Here",
+  "icon": "assets/harmonylink/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "net.harmonylink.fabric.HarmonyLinkFabric"
+    ]
+  },
+  "mixins": [
+    "harmonylink.mixins.json",
+    "harmonylink-common.mixins.json"
+  ],
+  "depends": {
+    "fabric": "*",
+    "minecraft": ">=1.19.4",
+    "architectury": ">=8.1.79"
+  }
+}
