@@ -1,7 +1,10 @@
-![MCVer](https://img.shields.io/badge/MC-1.19.4-green) ![ModLoader](https://img.shields.io/badge/Mod_Loader-Forge-green)
 <p align="center">
   <img src="Resources/HarmonyLinkBanner.png" alt="HarmonyLinkMC"/>
 </p>
+
+![MCVer](https://img.shields.io/badge/MC-1.19.4-blue)
+![ModLoader](https://img.shields.io/badge/Mod_Loader-Forge_/_Fabric-blue)
+![HLAPIVer](https://img.shields.io/badge/HarmonyLink_API_Version-V1-blue)
 
 Welcome to the HarmonyLink Minecraft Mod! This mod integrates the HarmonyLink API into Minecraft, providing an enhanced gaming experience on handheld devices, including the Steam Deck. With HarmonyLink, you can access real-time system metrics and adapt your gameplay settings for a more personalized and immersive adventure.
 
@@ -16,18 +19,16 @@ Welcome to the HarmonyLink Minecraft Mod! This mod integrates the HarmonyLink AP
 
 To get started with the HarmonyLink Minecraft Mod, follow these steps:
 
-1. Install Minecraft Forge: Make sure you have Minecraft Forge installed on your device.
-2. Download HarmonyLink Mod: Download the latest version of the HarmonyLink Minecraft Mod from the [GitHub repository](https://github.com/Jordonbc/HarmonyLink-MC/releases).
+1. Install Minecraft Forge / Fabric: Make sure you have Minecraft Forge / Fabric installed on your device.
+2. Download HarmonyLink Mod: Download the latest version of the HarmonyLink Minecraft Mod from the [modrinth](https://modrinth.com/mod/harmonylinkmc).
 3. Install HarmonyLink Mod: Place the downloaded mod file into the "mods" folder in your Minecraft directory.
-4. Download and run [HarmonyLinkServer](https://github.com/Jordonbc/HarmonyLinkServer).
+4. Download and install [HarmonyLinkServer](https://github.com/Jordonbc/HarmonyLinkServer/releases/latest/download/harmonylink_installer.desktop).
 4. Launch Minecraft: Start Minecraft with the HarmonyLink Mod installed.
 5. Enjoy the Enhanced Experience: Play Minecraft on your handheld device and witness the real-time system metrics and adaptive gameplay features provided by HarmonyLink.
 
-Note: To get this working in gamemode, HarmonyLinkServer needs to be installed as a service to run in the background.
-
 ### Contributing
 
-We welcome contributions from the Minecraft and programming community to further improve the HarmonyLink Minecraft Mod. If you have any suggestions, bug reports, or feature requests, please open an issue in the [GitHub repository](https://github.com/Jordonbc/HarmonyLink-MC/issues).
+We welcome contributions from the Minecraft and programming community to further improve the HarmonyLink Minecraft Mod. If you have any suggestions, bug reports, or feature requests, please open an issue in the [GitHub repository](https://github.com/Jordonbc/HarmonyLinkMC/issues).
 
 ### License
 
