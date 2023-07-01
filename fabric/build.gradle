@@ -2,6 +2,8 @@ plugins {
     id "com.github.johnrengelman.shadow" version "7.1.2"
 }
 
+archivesBaseName = rootProject.archives_base_name  + "-" + rootProject.mod_version + "-" + rootProject.minecraft_version + "-Fabric"
+
 architectury {
     platformSetupLoomIde()
     fabric()
@@ -42,6 +44,8 @@ shadowJar {
 
     configurations = [project.configurations.shadowCommon]
     classifier "dev-shadow"
+
+    version = null // Add this line
 }
 
 remapJar {
@@ -49,10 +53,14 @@ remapJar {
     input.set shadowJar.archiveFile
     dependsOn shadowJar
     classifier null
+
+    version = null // Add this line
 }
 
 jar {
-    classifier "dev"
+    classifier = 'dev'
+
+    version = null // Add this line
 }
 
 sourcesJar {
