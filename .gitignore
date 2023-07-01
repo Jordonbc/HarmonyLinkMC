@@ -15,6 +15,7 @@
 !common/build.gradle
 !forge/build.gradle
 !fabric/build.gradle
+!Resources/**
 
 !gradle/wrapper/**
 !forge/src/**
