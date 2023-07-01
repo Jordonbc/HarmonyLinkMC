@@ -2,6 +2,7 @@
 !*/
 !.gitignore
 !.github/**
+.idea/.gitignore
 
 !build.gradle
 !gradle.properties
